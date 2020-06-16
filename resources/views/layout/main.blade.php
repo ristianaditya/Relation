@@ -31,10 +31,6 @@
             @yield('container')
         <!-- Main layout -->
 
-        <!-- Footer -->
-            @include('layout.footer')
-        <!-- Footer -->
-
         <!-- JQuery -->
         <script src="{{ asset('MDB/js/jquery-3.4.1.min.js') }}"></script>
         <!-- Bootstrap tooltips -->

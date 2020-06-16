@@ -21,8 +21,10 @@ Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => 'auth',
 
 Auth::routes();
 
-// Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => 'auth', 'namespace' => 'Student'], function () {
-//     Route::get('/', 'StudentController@index');
-// });
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => 'auth'], function () {
+        Route::get('/create', 'profileController@create')->name('create');
+        Route::post('/store', 'profileController@store')->name('store');
+        Route::get('/', 'ProfileController@index')->name('index');
+});
 
-Route::get('/home', 'student\StudentController@index')->middleware('auth');
+Route::get('/home', 'Student\StudentController@index')->middleware('auth');

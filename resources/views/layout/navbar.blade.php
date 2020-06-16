@@ -21,8 +21,16 @@
                 <i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Profile</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">Log Out</a>
-                <a class="dropdown-item" href="#">My account</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                Log Out</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                
+                <a href="/profile" class="dropdown-item" href="#">My account</a>
                 </div>
             </li>
         </ul>
