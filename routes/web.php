@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'student\StudentController@index')->middleware('auth');
+Route::get('/', 'UtamaController@index')->middleware('auth');
 
 Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => 'auth', 'namespace' => 'Student'], function () {
         Route::get('/', 'StudentController@index')->name('index');
@@ -27,4 +27,4 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => 'auth']
         Route::get('/', 'ProfileController@index')->name('index');
 });
 
-Route::get('/home', 'Student\StudentController@index')->middleware('auth');
+Route::get('/home', 'UtamaController@index')->middleware('auth');

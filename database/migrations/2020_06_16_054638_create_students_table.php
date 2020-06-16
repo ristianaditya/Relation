@@ -17,6 +17,9 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name_student');
             $table->foreignId('jurusan_id')->constrained();
+            $table->string('kelas');
+            $table->string('alamat');
+            $table->date('tgl_lahir');
             $table->timestamps();
         });
     }
