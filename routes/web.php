@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'student\StudentController@index')->middleware('auth');
 
-Route::get('/', function () {
-    return view('index');
+Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => 'auth', 'namespace' => 'Student'], function () {
+        Route::get('/', 'StudentController@index')->name('index');
 });
+
+Auth::routes();
+
+// Route::group(['prefix' => 'home', 'as' => 'home.', 'middleware' => 'auth', 'namespace' => 'Student'], function () {
+//     Route::get('/', 'StudentController@index');
+// });
+
+Route::get('/home', 'student\StudentController@index')->middleware('auth');
