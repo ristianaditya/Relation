@@ -14,7 +14,7 @@
             <a href="/" class="collapsible-header waves-effect"><i class="w-fa fas fa-tachometer-alt"></i> Dashboards </a>
         </li>
         <li>
-            <a href="student" class="collapsible-header waves-effect"><i class="far fa-address-book"></i> Data Siswa </a>
+            <a href="/jurusan" class="collapsible-header waves-effect"><i class="far fa-address-book"></i> Data Jurusan </a>
         </li>
         <li>
             <a href="../sections/sections.html" class="collapsible-header waves-effect"><i class="w-fa fas fa-tachometer-alt"></i> Data Wali Kelas </a>

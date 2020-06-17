@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'UtamaController@index')->middleware('auth');
 
-Route::group(['prefix' => 'student', 'as' => 'student.', 'middleware' => 'auth', 'namespace' => 'Student'], function () {
-        Route::get('/', 'StudentController@index')->name('index');
+Route::group(['prefix' => 'jurusan', 'as' => 'jurusan.', 'middleware' => 'auth'], function () {
+        Route::get('/', 'JurusanController@index')->name('index');
+        Route::get('{student}/detail/', 'Student\StudentController@show')->name('detail');
 });
 
 Auth::routes();
